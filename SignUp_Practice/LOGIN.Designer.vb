@@ -1,4 +1,4 @@
-<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class LOGIN
     Inherits System.Windows.Forms.Form
 
@@ -33,13 +33,12 @@ Partial Class LOGIN
         Label6 = New Label()
         Label4 = New Label()
         Panel2 = New Panel()
-        PictureBox1 = New PictureBox()
+        Label5 = New Label()
         Button3 = New Button()
         Label8 = New Label()
         Label7 = New Label()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Label1
@@ -91,7 +90,7 @@ Partial Class LOGIN
         ' 
         ' Button_Signin
         ' 
-        Button_Signin.BackColor = Color.SteelBlue
+        Button_Signin.BackColor = Color.DarkOrchid
         Button_Signin.Font = New Font("Arial Black", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button_Signin.ForeColor = Color.Transparent
         Button_Signin.Location = New Point(39, 479)
@@ -114,7 +113,6 @@ Partial Class LOGIN
         ' Panel1
         ' 
         Panel1.BackColor = Color.Lavender
-        Panel1.BorderStyle = BorderStyle.FixedSingle
         Panel1.Controls.Add(Label6)
         Panel1.Controls.Add(Label4)
         Panel1.Controls.Add(Label1)
@@ -154,9 +152,8 @@ Partial Class LOGIN
         ' 
         ' Panel2
         ' 
-        Panel2.BackColor = Color.SteelBlue
-        Panel2.BorderStyle = BorderStyle.FixedSingle
-        Panel2.Controls.Add(PictureBox1)
+        Panel2.BackColor = Color.DarkOrchid
+        Panel2.Controls.Add(Label5)
         Panel2.Controls.Add(Button3)
         Panel2.Controls.Add(Label8)
         Panel2.Controls.Add(Label7)
@@ -165,21 +162,23 @@ Partial Class LOGIN
         Panel2.Size = New Size(331, 624)
         Panel2.TabIndex = 11
         ' 
-        ' PictureBox1
+        ' Label5
         ' 
-        PictureBox1.BackgroundImage = My.Resources.Resources.logo_no_bg
-        PictureBox1.BackgroundImageLayout = ImageLayout.Stretch
-        PictureBox1.Location = New Point(103, 47)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(126, 114)
-        PictureBox1.TabIndex = 15
-        PictureBox1.TabStop = False
+        Label5.AutoSize = True
+        Label5.BackColor = Color.Transparent
+        Label5.Font = New Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label5.ForeColor = Color.Gainsboro
+        Label5.Location = New Point(84, 558)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(174, 23)
+        Label5.TabIndex = 15
+        Label5.Text = "www.gawanipaul.com"
         ' 
         ' Button3
         ' 
         Button3.BackColor = Color.Gainsboro
         Button3.Font = New Font("Arial Black", 12F, FontStyle.Bold)
-        Button3.ForeColor = Color.SteelBlue
+        Button3.ForeColor = Color.DarkOrchid
         Button3.Location = New Point(24, 344)
         Button3.Name = "Button3"
         Button3.Size = New Size(285, 43)
@@ -215,7 +214,7 @@ Partial Class LOGIN
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.GhostWhite
-        BackgroundImage = My.Resources.Resources.abstract_textured_backgound
+        BackgroundImage = My.Resources.Resources.porpol
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1235, 695)
         Controls.Add(Panel2)
@@ -229,7 +228,6 @@ Partial Class LOGIN
         Panel1.PerformLayout()
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -247,6 +245,6 @@ Partial Class LOGIN
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Button3 As Button
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label5 As Label
 
 End Class
