@@ -1,22 +1,21 @@
+Imports System.Windows.Forms.VisualStyles
+
 Public Class MAIN
     Private activeButton As Button = Nothing
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
+    ' Button2 click event (Logout confirmation)
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim result As DialogResult = MessageBox.Show("Are you sure you want to logout?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information)
 
         If result = DialogResult.OK Then
             Dim login As New LOGIN
-
             login.Show()
             Me.Hide()
             Me.Close()
-
-
-        Else
-
         End If
     End Sub
 
+    ' Form Load event
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Set default panel visibility - hide all panels
         TrackerPanel.Visible = False
@@ -85,15 +84,13 @@ Public Class MAIN
 
     ' Method to set the active button and change colors
     Private Sub SetActiveButton(button As Button)
-        ' If there is a previous active button, reset its color
+        ' Reset previous active button color
         If activeButton IsNot Nothing Then
-            activeButton.BackColor = Color.Transparent ' Make background transparent for previous active button
+            activeButton.BackColor = Color.Transparent
         End If
 
         ' Set the new active button color
-        button.BackColor = Color.LightBlue ' Active button color
-
-        ' Set the new active button reference
+        button.BackColor = Color.LightBlue
         activeButton = button
     End Sub
 
@@ -105,21 +102,68 @@ Public Class MAIN
         TransparencyButton.BackColor = Color.Transparent
     End Sub
 
-    ' MouseDown event for all buttons to change background color when clicked
+    ' MouseDown event for all buttons
     Private Sub Button_MouseDown(sender As Object, e As MouseEventArgs) Handles TrackerButton.MouseDown, AllocationButton.MouseDown, GoalsButton.MouseDown, TransparencyButton.MouseDown
-        ' Change the background color on mouse down
         Dim button As Button = CType(sender, Button)
-        button.BackColor = Color.LightSkyBlue ' Or any color you prefer for clicked state
+        button.BackColor = Color.LightSkyBlue ' Clicked state color
     End Sub
 
-    ' MouseUp event for all buttons to revert color back after mouse release
+    ' MouseUp event for all buttons
     Private Sub Button_MouseUp(sender As Object, e As MouseEventArgs) Handles TrackerButton.MouseUp, AllocationButton.MouseUp, GoalsButton.MouseUp, TransparencyButton.MouseUp
-        ' If the button is active, keep the active color, else reset to transparent
         Dim button As Button = CType(sender, Button)
 
+        ' Reset color for non-active buttons
         If button IsNot activeButton Then
-            button.BackColor = Color.Transparent ' Make background transparent for non-active buttons
+            button.BackColor = Color.Transparent
         End If
     End Sub
 
+    ' Transactions logic
+    Private Transactions As New List(Of Transaction)()
+
+    Private Sub btnAddTransaction_Click(sender As Object, e As EventArgs) Handles btnAddTransaction.Click
+        ' Input Validation
+        If String.IsNullOrWhiteSpace(txtAmount.Text) OrElse
+           Not Decimal.TryParse(txtAmount.Text, Nothing) Then
+            MessageBox.Show("Please enter a valid amount.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        If cmbType.SelectedIndex = -1 OrElse cmbCategory.SelectedIndex = -1 OrElse cmbPaymentMethod.SelectedIndex = -1 Then
+            MessageBox.Show("Please select all dropdown fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        ' Create and Add Transaction
+        Dim newTransaction As New Transaction() With {
+            .Amount = Decimal.Parse(txtAmount.Text),
+            .TransactionDate = dtpDate.Value,
+            .Type = cmbType.SelectedItem.ToString(),
+            .Category = cmbCategory.SelectedItem.ToString(),
+            .PaymentMethod = cmbPaymentMethod.SelectedItem.ToString()
+        }
+
+        Transactions.Add(newTransaction)
+        UpdateTransactionGrid()
+        ClearInputFields()
+    End Sub
+
+    Private Sub UpdateTransactionGrid()
+        dgvTransactions.DataSource = Nothing
+        dgvTransactions.DataSource = Transactions
+    End Sub
+
+    Private Sub ClearInputFields()
+        txtAmount.Clear()
+        cmbType.SelectedIndex = -1
+        cmbCategory.SelectedIndex = -1
+        cmbPaymentMethod.SelectedIndex = -1
+        dtpDate.Value = Date.Now
+    End Sub
+
+    ' Form Load event to initialize transactions
+    Private Sub MAIN_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        dgvTransactions.AutoGenerateColumns = True
+        dtpDate.Value = Date.Now
+    End Sub
 End Class

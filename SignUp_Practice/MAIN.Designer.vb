@@ -37,7 +37,13 @@ Partial Class MAIN
         Label3 = New Label()
         GoalsPanel = New Panel()
         TrackerPanel = New Panel()
-        Label1 = New Label()
+        dgvTransactions = New DataGridView()
+        btnAddTransaction = New Button()
+        cmbPaymentMethod = New ComboBox()
+        cmbCategory = New ComboBox()
+        cmbType = New ComboBox()
+        dtpDate = New DateTimePicker()
+        txtAmount = New TextBox()
         TransparencyPanel = New Panel()
         Label4 = New Label()
         MainPanel.SuspendLayout()
@@ -48,6 +54,7 @@ Partial Class MAIN
         AllocationPanel.SuspendLayout()
         GoalsPanel.SuspendLayout()
         TrackerPanel.SuspendLayout()
+        CType(dgvTransactions, ComponentModel.ISupportInitialize).BeginInit()
         TransparencyPanel.SuspendLayout()
         SuspendLayout()
         ' 
@@ -194,21 +201,76 @@ Partial Class MAIN
         ' 
         ' TrackerPanel
         ' 
-        TrackerPanel.Controls.Add(Label1)
+        TrackerPanel.Controls.Add(dgvTransactions)
+        TrackerPanel.Controls.Add(btnAddTransaction)
+        TrackerPanel.Controls.Add(cmbPaymentMethod)
+        TrackerPanel.Controls.Add(cmbCategory)
+        TrackerPanel.Controls.Add(cmbType)
+        TrackerPanel.Controls.Add(dtpDate)
+        TrackerPanel.Controls.Add(txtAmount)
         TrackerPanel.Location = New Point(360, 36)
         TrackerPanel.Name = "TrackerPanel"
         TrackerPanel.Size = New Size(968, 748)
         TrackerPanel.TabIndex = 11
         ' 
-        ' Label1
+        ' dgvTransactions
         ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(347, 215)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(76, 30)
-        Label1.TabIndex = 0
-        Label1.Text = "tracker"
+        dgvTransactions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        dgvTransactions.Location = New Point(413, 96)
+        dgvTransactions.Name = "dgvTransactions"
+        dgvTransactions.Size = New Size(460, 456)
+        dgvTransactions.TabIndex = 6
+        ' 
+        ' btnAddTransaction
+        ' 
+        btnAddTransaction.Location = New Point(166, 303)
+        btnAddTransaction.Name = "btnAddTransaction"
+        btnAddTransaction.Size = New Size(75, 23)
+        btnAddTransaction.TabIndex = 5
+        btnAddTransaction.Text = "Submit"
+        btnAddTransaction.UseVisualStyleBackColor = True
+        ' 
+        ' cmbPaymentMethod
+        ' 
+        cmbPaymentMethod.FormattingEnabled = True
+        cmbPaymentMethod.Items.AddRange(New Object() {"Cash", "Credit Card", "Bank Transfer"})
+        cmbPaymentMethod.Location = New Point(142, 265)
+        cmbPaymentMethod.Name = "cmbPaymentMethod"
+        cmbPaymentMethod.Size = New Size(121, 23)
+        cmbPaymentMethod.TabIndex = 4
+        ' 
+        ' cmbCategory
+        ' 
+        cmbCategory.FormattingEnabled = True
+        cmbCategory.Items.AddRange(New Object() {"Food", "Rent", "Entertainment", "Utilities"})
+        cmbCategory.Location = New Point(142, 216)
+        cmbCategory.Name = "cmbCategory"
+        cmbCategory.Size = New Size(121, 23)
+        cmbCategory.TabIndex = 3
+        ' 
+        ' cmbType
+        ' 
+        cmbType.AllowDrop = True
+        cmbType.FormattingEnabled = True
+        cmbType.Items.AddRange(New Object() {"Income", "Expense"})
+        cmbType.Location = New Point(142, 167)
+        cmbType.Name = "cmbType"
+        cmbType.Size = New Size(121, 23)
+        cmbType.TabIndex = 2
+        ' 
+        ' dtpDate
+        ' 
+        dtpDate.Location = New Point(102, 113)
+        dtpDate.Name = "dtpDate"
+        dtpDate.Size = New Size(200, 23)
+        dtpDate.TabIndex = 1
+        ' 
+        ' txtAmount
+        ' 
+        txtAmount.Location = New Point(154, 65)
+        txtAmount.Name = "txtAmount"
+        txtAmount.Size = New Size(100, 23)
+        txtAmount.TabIndex = 0
         ' 
         ' TransparencyPanel
         ' 
@@ -257,6 +319,7 @@ Partial Class MAIN
         GoalsPanel.PerformLayout()
         TrackerPanel.ResumeLayout(False)
         TrackerPanel.PerformLayout()
+        CType(dgvTransactions, ComponentModel.ISupportInitialize).EndInit()
         TransparencyPanel.ResumeLayout(False)
         TransparencyPanel.PerformLayout()
         ResumeLayout(False)
@@ -276,8 +339,14 @@ Partial Class MAIN
     Friend WithEvents Label3 As Label
     Friend WithEvents GoalsPanel As Panel
     Friend WithEvents TrackerPanel As Panel
-    Friend WithEvents Label1 As Label
     Friend WithEvents TransparencyPanel As Panel
     Friend WithEvents Label4 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents btnAddTransaction As Button
+    Friend WithEvents cmbPaymentMethod As ComboBox
+    Friend WithEvents cmbCategory As ComboBox
+    Friend WithEvents cmbType As ComboBox
+    Friend WithEvents dtpDate As DateTimePicker
+    Friend WithEvents txtAmount As TextBox
+    Friend WithEvents dgvTransactions As DataGridView
 End Class
