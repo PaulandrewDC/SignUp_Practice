@@ -39,12 +39,13 @@ Partial Class SIGNUP
         TextBox_confirmpass = New TextBox()
         Label3 = New Label()
         Panel2 = New Panel()
-        Label5 = New Label()
+        PictureBox1 = New PictureBox()
         Button3 = New Button()
         Label7 = New Label()
         Label8 = New Label()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
@@ -123,7 +124,7 @@ Partial Class SIGNUP
         ' TextBox_fname
         ' 
         TextBox_fname.BackColor = Color.White
-        TextBox_fname.Font = New Font("Arial Narrow", 15F)
+        TextBox_fname.Font = New Font("Arial Narrow", 15.0F)
         TextBox_fname.Location = New Point(39, 150)
         TextBox_fname.Name = "TextBox_fname"
         TextBox_fname.Size = New Size(329, 30)
@@ -132,7 +133,7 @@ Partial Class SIGNUP
         ' TextBox_lname
         ' 
         TextBox_lname.BackColor = Color.White
-        TextBox_lname.Font = New Font("Arial Narrow", 15F)
+        TextBox_lname.Font = New Font("Arial Narrow", 15.0F)
         TextBox_lname.Location = New Point(39, 220)
         TextBox_lname.Name = "TextBox_lname"
         TextBox_lname.Size = New Size(323, 30)
@@ -141,7 +142,7 @@ Partial Class SIGNUP
         ' TextBox_pass
         ' 
         TextBox_pass.BackColor = Color.White
-        TextBox_pass.Font = New Font("Arial Narrow", 15F)
+        TextBox_pass.Font = New Font("Arial Narrow", 15.0F)
         TextBox_pass.Location = New Point(39, 360)
         TextBox_pass.Name = "TextBox_pass"
         TextBox_pass.Size = New Size(329, 30)
@@ -171,8 +172,8 @@ Partial Class SIGNUP
         ' 
         ' Button2
         ' 
-        Button2.BackColor = Color.DarkOrchid
-        Button2.Font = New Font("Arial Black", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button2.BackColor = Color.SteelBlue
+        Button2.Font = New Font("Arial Black", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button2.ForeColor = Color.Transparent
         Button2.Location = New Point(39, 495)
         Button2.Name = "Button2"
@@ -194,7 +195,7 @@ Partial Class SIGNUP
         ' TextBox_emailadd
         ' 
         TextBox_emailadd.BackColor = Color.White
-        TextBox_emailadd.Font = New Font("Arial Narrow", 15F)
+        TextBox_emailadd.Font = New Font("Arial Narrow", 15.0F)
         TextBox_emailadd.ForeColor = SystemColors.WindowText
         TextBox_emailadd.Location = New Point(39, 290)
         TextBox_emailadd.Name = "TextBox_emailadd"
@@ -204,7 +205,7 @@ Partial Class SIGNUP
         ' TextBox_confirmpass
         ' 
         TextBox_confirmpass.BackColor = Color.White
-        TextBox_confirmpass.Font = New Font("Arial Narrow", 15F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        TextBox_confirmpass.Font = New Font("Arial Narrow", 15.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         TextBox_confirmpass.Location = New Point(39, 439)
         TextBox_confirmpass.Name = "TextBox_confirmpass"
         TextBox_confirmpass.Size = New Size(329, 30)
@@ -222,8 +223,8 @@ Partial Class SIGNUP
         ' 
         ' Panel2
         ' 
-        Panel2.BackColor = Color.DarkOrchid
-        Panel2.Controls.Add(Label5)
+        Panel2.BackColor = Color.SteelBlue
+        Panel2.Controls.Add(PictureBox1)
         Panel2.Controls.Add(Button3)
         Panel2.Controls.Add(Label7)
         Panel2.Controls.Add(Label8)
@@ -232,23 +233,21 @@ Partial Class SIGNUP
         Panel2.Size = New Size(331, 624)
         Panel2.TabIndex = 12
         ' 
-        ' Label5
+        ' PictureBox1
         ' 
-        Label5.AutoSize = True
-        Label5.BackColor = Color.Transparent
-        Label5.Font = New Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label5.ForeColor = Color.Gainsboro
-        Label5.Location = New Point(84, 558)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(174, 23)
-        Label5.TabIndex = 18
-        Label5.Text = "www.gawanipaul.com"
+        PictureBox1.BackgroundImage = My.Resources.Resources.logo_no_bg
+        PictureBox1.BackgroundImageLayout = ImageLayout.Stretch
+        PictureBox1.Location = New Point(98, 47)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(141, 144)
+        PictureBox1.TabIndex = 18
+        PictureBox1.TabStop = False
         ' 
         ' Button3
         ' 
         Button3.BackColor = Color.Gainsboro
-        Button3.Font = New Font("Arial Black", 12F, FontStyle.Bold)
-        Button3.ForeColor = Color.DarkOrchid
+        Button3.Font = New Font("Arial Black", 12.0F, FontStyle.Bold)
+        Button3.ForeColor = Color.SteelBlue
         Button3.Location = New Point(24, 344)
         Button3.Name = "Button3"
         Button3.Size = New Size(285, 43)
@@ -271,7 +270,7 @@ Partial Class SIGNUP
         ' 
         Label8.AutoSize = True
         Label8.BackColor = Color.Transparent
-        Label8.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label8.Font = New Font("Segoe UI", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label8.ForeColor = Color.Gainsboro
         Label8.Location = New Point(78, 272)
         Label8.Name = "Label8"
@@ -281,11 +280,11 @@ Partial Class SIGNUP
         ' 
         ' SIGNUP
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         AutoValidate = AutoValidate.EnablePreventFocusChange
         BackColor = Color.GhostWhite
-        BackgroundImage = My.Resources.Resources.porpol
+        BackgroundImage = My.Resources.Resources.abstract_textured_backgound
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1235, 695)
         Controls.Add(Panel2)
@@ -299,6 +298,7 @@ Partial Class SIGNUP
         Panel1.PerformLayout()
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -314,7 +314,6 @@ Partial Class SIGNUP
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Button3 As Button
-    Friend WithEvents Label5 As Label
     Friend WithEvents TextBox_fname As TextBox
     Friend WithEvents TextBox_lname As TextBox
     Friend WithEvents TextBox_pass As TextBox
@@ -323,4 +322,5 @@ Partial Class SIGNUP
     Friend WithEvents Label4 As Label
     Friend WithEvents CB_confirmpass As CheckBox
     Friend WithEvents CB_pass As CheckBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

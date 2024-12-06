@@ -30,6 +30,7 @@ Partial Class MAIN
         GoalsButton = New Button()
         TransparencyButton = New Button()
         LogoPanel = New Panel()
+        PictureBox1 = New PictureBox()
         Button2 = New Button()
         AllocationPanel = New Panel()
         Label2 = New Label()
@@ -42,6 +43,8 @@ Partial Class MAIN
         MainPanel.SuspendLayout()
         SidePanel.SuspendLayout()
         NavPanel.SuspendLayout()
+        LogoPanel.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         AllocationPanel.SuspendLayout()
         GoalsPanel.SuspendLayout()
         TrackerPanel.SuspendLayout()
@@ -125,10 +128,21 @@ Partial Class MAIN
         ' 
         ' LogoPanel
         ' 
+        LogoPanel.Controls.Add(PictureBox1)
         LogoPanel.Location = New Point(0, 0)
         LogoPanel.Name = "LogoPanel"
         LogoPanel.Size = New Size(296, 216)
         LogoPanel.TabIndex = 20
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackgroundImage = My.Resources.Resources.logo_no_bg
+        PictureBox1.BackgroundImageLayout = ImageLayout.Stretch
+        PictureBox1.Location = New Point(77, 46)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(141, 144)
+        PictureBox1.TabIndex = 21
+        PictureBox1.TabStop = False
         ' 
         ' Button2
         ' 
@@ -181,7 +195,7 @@ Partial Class MAIN
         ' TrackerPanel
         ' 
         TrackerPanel.Controls.Add(Label1)
-        TrackerPanel.Location = New Point(358, 36)
+        TrackerPanel.Location = New Point(360, 36)
         TrackerPanel.Name = "TrackerPanel"
         TrackerPanel.Size = New Size(968, 748)
         TrackerPanel.TabIndex = 11
@@ -219,6 +233,7 @@ Partial Class MAIN
         AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.DarkOrchid
+        BackgroundImage = My.Resources.Resources.abstract_textured_backgound
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1414, 825)
         Controls.Add(TrackerPanel)
@@ -234,6 +249,8 @@ Partial Class MAIN
         MainPanel.ResumeLayout(False)
         SidePanel.ResumeLayout(False)
         NavPanel.ResumeLayout(False)
+        LogoPanel.ResumeLayout(False)
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         AllocationPanel.ResumeLayout(False)
         AllocationPanel.PerformLayout()
         GoalsPanel.ResumeLayout(False)
@@ -262,4 +279,5 @@ Partial Class MAIN
     Friend WithEvents Label1 As Label
     Friend WithEvents TransparencyPanel As Panel
     Friend WithEvents Label4 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

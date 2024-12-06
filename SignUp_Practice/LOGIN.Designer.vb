@@ -33,12 +33,13 @@ Partial Class LOGIN
         Label6 = New Label()
         Label4 = New Label()
         Panel2 = New Panel()
-        Label5 = New Label()
+        PictureBox1 = New PictureBox()
         Button3 = New Button()
         Label8 = New Label()
         Label7 = New Label()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Label1
@@ -63,7 +64,7 @@ Partial Class LOGIN
         ' 
         ' TextBox_Email
         ' 
-        TextBox_Email.Font = New Font("Arial Narrow", 15F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        TextBox_Email.Font = New Font("Arial Narrow", 15.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         TextBox_Email.Location = New Point(39, 194)
         TextBox_Email.Name = "TextBox_Email"
         TextBox_Email.Size = New Size(329, 30)
@@ -82,7 +83,7 @@ Partial Class LOGIN
         ' TextBox_Password
         ' 
         TextBox_Password.BackColor = Color.White
-        TextBox_Password.Font = New Font("Arial Narrow", 15F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        TextBox_Password.Font = New Font("Arial Narrow", 15.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         TextBox_Password.Location = New Point(39, 275)
         TextBox_Password.Name = "TextBox_Password"
         TextBox_Password.Size = New Size(329, 30)
@@ -90,8 +91,8 @@ Partial Class LOGIN
         ' 
         ' Button_Signin
         ' 
-        Button_Signin.BackColor = Color.DarkOrchid
-        Button_Signin.Font = New Font("Arial Black", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button_Signin.BackColor = Color.SteelBlue
+        Button_Signin.Font = New Font("Arial Black", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button_Signin.ForeColor = Color.Transparent
         Button_Signin.Location = New Point(39, 479)
         Button_Signin.Name = "Button_Signin"
@@ -142,7 +143,7 @@ Partial Class LOGIN
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label4.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label4.ForeColor = Color.DarkCyan
         Label4.Location = New Point(39, 525)
         Label4.Name = "Label4"
@@ -152,8 +153,8 @@ Partial Class LOGIN
         ' 
         ' Panel2
         ' 
-        Panel2.BackColor = Color.DarkOrchid
-        Panel2.Controls.Add(Label5)
+        Panel2.BackColor = Color.SteelBlue
+        Panel2.Controls.Add(PictureBox1)
         Panel2.Controls.Add(Button3)
         Panel2.Controls.Add(Label8)
         Panel2.Controls.Add(Label7)
@@ -162,23 +163,21 @@ Partial Class LOGIN
         Panel2.Size = New Size(331, 624)
         Panel2.TabIndex = 11
         ' 
-        ' Label5
+        ' PictureBox1
         ' 
-        Label5.AutoSize = True
-        Label5.BackColor = Color.Transparent
-        Label5.Font = New Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label5.ForeColor = Color.Gainsboro
-        Label5.Location = New Point(84, 558)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(174, 23)
-        Label5.TabIndex = 15
-        Label5.Text = "www.gawanipaul.com"
+        PictureBox1.BackgroundImage = My.Resources.Resources.logo_no_bg
+        PictureBox1.BackgroundImageLayout = ImageLayout.Stretch
+        PictureBox1.Location = New Point(98, 47)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(141, 144)
+        PictureBox1.TabIndex = 15
+        PictureBox1.TabStop = False
         ' 
         ' Button3
         ' 
         Button3.BackColor = Color.Gainsboro
-        Button3.Font = New Font("Arial Black", 12F, FontStyle.Bold)
-        Button3.ForeColor = Color.DarkOrchid
+        Button3.Font = New Font("Arial Black", 12.0F, FontStyle.Bold)
+        Button3.ForeColor = Color.SteelBlue
         Button3.Location = New Point(24, 344)
         Button3.Name = "Button3"
         Button3.Size = New Size(285, 43)
@@ -190,7 +189,7 @@ Partial Class LOGIN
         ' 
         Label8.AutoSize = True
         Label8.BackColor = Color.Transparent
-        Label8.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label8.Font = New Font("Segoe UI", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label8.ForeColor = Color.Gainsboro
         Label8.Location = New Point(60, 275)
         Label8.Name = "Label8"
@@ -211,10 +210,10 @@ Partial Class LOGIN
         ' 
         ' LOGIN
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.GhostWhite
-        BackgroundImage = My.Resources.Resources.porpol
+        BackgroundImage = My.Resources.Resources.abstract_textured_backgound
         BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(1235, 695)
         Controls.Add(Panel2)
@@ -228,6 +227,7 @@ Partial Class LOGIN
         Panel1.PerformLayout()
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -245,6 +245,6 @@ Partial Class LOGIN
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Button3 As Button
-    Friend WithEvents Label5 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 
 End Class
